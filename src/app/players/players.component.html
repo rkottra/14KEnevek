@@ -1,0 +1,31 @@
+<section class="row" *ngIf="playerid == -1">
+
+    <article *ngFor="let player of players;index as i" class="card col-3 m-4 p-3">
+
+        <a [routerLink]="['/versenyzok/'+i]">
+            <h5 class="card-title">
+                {{player.name}}
+            </h5>
+        </a>
+
+    </article>
+</section>
+
+<section class="row" *ngIf="playerid > -1">
+    
+    <article class="card col-11 m-4 p-3">
+
+        <img src="/assets/{{players[playerid].url}}" class="card-img-top" />
+        
+        <div class="card-body">
+            <h5 class="card-title">
+                {{players[playerid].name}}
+            </h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio voluptatem incidunt sint libero impedit id reiciendis molestiae deleniti nulla soluta ea quibusdam nesciunt odit obcaecati nobis veniam, earum unde assumenda!</p>
+        </div>
+        
+        <a [routerLink]="['/versenyzok']">Vissza</a>
+
+    </article>
+
+</section>
